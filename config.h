@@ -100,6 +100,11 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
     {"Gimp", NULL, NULL, 0, 1, -1},
     {"Firefox", NULL, NULL, 1 << 8, 0, -1},
+    {"pavucontrol", NULL, NULL, 0, 1, -1},
+    {"nwg-look", NULL, NULL, 0, 1, -1},
+    {"mpv", NULL, NULL, 0, 1, -1},
+
+    {"mpvk", NULL, NULL, 0, 1, -1},
 };
 
 /* layout(s) */
@@ -194,6 +199,8 @@ static const Key keys[] = {
 
     {MODKEY, XK_t, spawn, SHCMD("thunar")},
 
+    {MODKEY, XK_f, fullscreen, {0}},
+
     {MODKEY | ShiftMask, XK_j, movestack, {.i = +1}},
     {MODKEY | ShiftMask, XK_k, movestack, {.i = -1}},
 
@@ -245,11 +252,13 @@ static const Button buttons[] = {
     // {ClkTagBar, 0, Button3, toggleview, {0}},
     // {ClkTagBar, MODKEY, Button1, tag, {0}},
     // {ClkTagBar, MODKEY, Button3, toggletag, {0}},
-    //
-    {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
+
+    {ClkClientWin, MODKEY, Button1, movemouse, {0}},
     {ClkClientWin, MODKEY, Button3, resizemouse, {0}},
-    {ClkClientWin, ControlMask, Button1, dragmfact, {0}},
-    {ClkClientWin, ControlMask, Button3, dragcfact, {0}},
+
+    {ClkClientWin, MODKEY, Button2, togglefloating, {0}},
+    //{ClkClientWin, ControlMask, Button1, dragmfact, {0}},
+    //{ClkClientWin, ControlMask, Button3, dragcfact, {0}},
     {ClkTagBar, 0, Button1, view, {0}},
     {ClkTagBar, 0, Button3, toggleview, {0}},
     {ClkTagBar, MODKEY, Button1, tag, {0}},
