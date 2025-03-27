@@ -8,7 +8,7 @@ static const int topbar = 1;            /* 0 means bottom bar */
 static const unsigned int gappih = 5;   /* horiz inner gap between windows */
 static const unsigned int gappiv = 5;   /* vert inner gap between windows */
 static const unsigned int gappoh =
-    5; /* horiz outer gap between windows and screen edge */
+    10; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
     5; /* vert outer gap between windows and screen edge */
 static const int smartgaps =
@@ -18,7 +18,7 @@ static const int vertpad = 0; /* vertical padding of bar */
 static const int sidepad = 0; /* horizontal padding of bar */
 
 static const int user_bh =
-    30; /* 2 is the default spacing around the bar's font */
+    35; /* 2 is the default spacing around the bar's font */
 
 static const unsigned int ulinepad =
     5; /* horizontal padding between the underline and tag */
@@ -55,9 +55,9 @@ static const char dmenufont[] = "Ubuntu:size=10";
 //
 static char normbgcolor[] = "#222222";
 static char normbordercolor[] = "#444444";
-static char normfgcolor[] = "#bbbbbb";
+static char normfgcolor[] = "#282828";
 static char selfgcolor[] = "#eeeeee";
-static char selbordercolor[] = "#005577";
+static char selbordercolor[] = "#51afef";
 static char selbgcolor[] = "#005577";
 static char *colors[][3] = {
     /*               fg           bg           border   */
@@ -102,9 +102,10 @@ static const Rule rules[] = {
     {"Firefox", NULL, NULL, 1 << 8, 0, -1},
     {"pavucontrol", NULL, NULL, 0, 1, -1},
     {"nwg-look", NULL, NULL, 0, 1, -1},
+    {"Nwg-look", NULL, NULL, 0, 1, -1},
     {"mpv", NULL, NULL, 0, 1, -1},
-
     {"mpvk", NULL, NULL, 0, 1, -1},
+    {"imv", NULL, NULL, 0, 1, -1},
 };
 
 /* layout(s) */
@@ -170,7 +171,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = {"dmenu_run",    "-fn", dmenufont,   "-nb",
                                  normbgcolor,    "-nf", normfgcolor, "-sb",
                                  selbordercolor, "-sf", selfgcolor,  NULL};
-static const char *termcmd[] = {"kitty", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
 
 #include "movestack.c"
 
